@@ -1,5 +1,12 @@
 # -*- coding: utf-8 -*-
 from django.http import HttpResponse
+from models import *
+from django.shortcuts import render_to_response
 
-def hello(request):
-    return HttpResponse("来权是个大傻逼！")
+def login(request):
+    return render_to_response('login.html')
+
+def index(request):
+    websites = Website.objects.all()
+    print(websites)
+    return render_to_response('index.html', locals())
