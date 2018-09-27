@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>我的生活</title>
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+    <link rel="shortcut icon" href="/favicon.ico">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+    <link rel="stylesheet" href="//g.alicdn.com/msui/sm/0.6.2/css/sm.min.css">
+    <link rel="stylesheet" href="//g.alicdn.com/msui/sm/0.6.2/css/sm-extend.min.css">
+      <script src="https://cdn.bootcss.com/jquery/2.0.0/jquery.min.js">
+</script>
+  </head>
+  <body>
+    <!-- page集合的容器，里面放多个平行的.page，其他.page作为内联页面由路由控制展示 -->
+    <div class="page-group">
+        <!-- 单个page ,第一个.page默认被展示-->
+        <div class="page" id="guonei">
+            <!-- 标题栏 -->
+            <header class="bar bar-nav">
+{#                <a class="icon icon-me pull-left open-panel"></a>#}
+                <h1 class="button" id="add_url">添加</h1>
+            </header>
+
+            <!-- 工具栏 -->
+            <nav class="bar bar-tab">
+                <a class="tab-item external active">
+                    <span class="icon icon-home"></span>
+                    <span class="tab-label">国内</span>
+                </a>
+                <div class="tab-item external">
+                    <a href="#guowai" style="color:darkgray;">
+                        <span class="icon icon-download"></span>
+                        <span class="tab-label">国外</span>
+                    </a>
+                </div>
+            </nav>
+
+            <!-- 这里是页面内容区 -->
+            <div class="content">
+                asdjlas
+            </div>
+        </div>
+
+        <div class="page" id="guowai">
+            <!-- 标题栏 -->
+            <header class="bar bar-nav">
+                <a class="icon icon-me pull-left open-panel"></a>
+                <h1 class="button">添加</h1>
+            </header>
+
+            <!-- 工具栏 -->
+            <nav class="bar bar-tab">
+                <div class="tab-item external">
+                    <a href="#guonei" style="color:darkgray;">
+                        <span class="icon icon-home" ></span>
+                        <span class="tab-label">国内</span>
+                    </a>
+                </div>
+                <a class="tab-item external active">
+                    <span class="icon icon-download"></span>
+                    <span class="tab-label">国外</span>
+                </a>
+            </nav>
+
+            <!-- 这里是页面内容区 -->
+            <div class="content">
+                什么情况
+            </div>
+        </div>
+        <!-- 其他的单个page内联页（如果有） -->
+        <div class="page">...</div>
+    </div>
+
+    <!-- 默认必须要执行$.init(),实际业务里一般不会在HTML文档里执行，通常是在业务页面代码的最后执行 -->
+    <script>
+        $.init();
+    </script>
+
+    <script type='text/javascript' src='//g.alicdn.com/sj/lib/zepto/zepto.min.js' charset='utf-8'></script>
+    <script type='text/javascript' src='//g.alicdn.com/msui/sm/0.6.2/js/sm.min.js' charset='utf-8'></script>
+    <script type='text/javascript' src='//g.alicdn.com/msui/sm/0.6.2/js/sm-extend.min.js' charset='utf-8'></script>
+    <script>
+        $("#change_to_guowai").click(function () {
+           alert("成功");
+           {#$("#guonei").hide();#}
+           {#$("#guowai").show();#}
+        });
+        $("#add_url").click(function () {
+           alert("成功");
+        });
+    </script>
+  </body>
+</html>
