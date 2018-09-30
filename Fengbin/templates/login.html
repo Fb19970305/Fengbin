@@ -1,97 +1,115 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>我的生活</title>
-    <meta name="viewport" content="initial-scale=1, maximum-scale=1">
-    <link rel="shortcut icon" href="/favicon.ico">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black">
-
-    <link rel="stylesheet" href="//g.alicdn.com/msui/sm/0.6.2/css/sm.min.css">
-    <link rel="stylesheet" href="//g.alicdn.com/msui/sm/0.6.2/css/sm-extend.min.css">
-      <script src="https://cdn.bootcss.com/jquery/2.0.0/jquery.min.js">
-</script>
-  </head>
-  <body>
-    <!-- page集合的容器，里面放多个平行的.page，其他.page作为内联页面由路由控制展示 -->
-    <div class="page-group">
-        <!-- 单个page ,第一个.page默认被展示-->
-        <div class="page" id="guonei">
-            <!-- 标题栏 -->
-            <header class="bar bar-nav">
-{#                <a class="icon icon-me pull-left open-panel"></a>#}
-                <h1 class="button" id="add_url">添加</h1>
-            </header>
-
-            <!-- 工具栏 -->
-            <nav class="bar bar-tab">
-                <a class="tab-item external active">
-                    <span class="icon icon-home"></span>
-                    <span class="tab-label">国内</span>
-                </a>
-                <div class="tab-item external">
-                    <a href="#guowai" style="color:darkgray;">
-                        <span class="icon icon-download"></span>
-                        <span class="tab-label">国外</span>
-                    </a>
-                </div>
-            </nav>
-
-            <!-- 这里是页面内容区 -->
-            <div class="content">
-                asdjlas
-            </div>
+<head>
+  <title>Bootstrap 实例</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/4.1.0/css/bootstrap.min.css">
+  <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+    <style type="text/css">
+        .nav-logo{
+            float: left;
+            height: 40px;
+            margin-top: 5px;
+            overflow: hidden;
+        }
+        .nav-logo a{
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+{# <div class="navbar navbar-fixed-top navbar-inverse" >#}
+{#     <div class="container">#}
+{#         <div class="navbar-header">#}
+{#             <button type="button" style="width: 100%" class="btn btn-info navbar-toggle"  data-toggle="collapse" data-target="#navBar">#}
+{#                 #}
+{#             </button>#}
+{#         </div>#}
+{#         <div class="collapse navbar-collapse navbar-right" id="navBar">#}
+{#             <ul class="nav navbar-nav">#}
+{#                 <li><a href="#">首页</a></li>#}
+{#                 <li><a href="#">公司介绍</a></li>#}
+{#                 <li class="dropdown">#}
+{#                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">#}
+{#                         产品中心<span class="caret"></span>#}
+{#                     </a>#}
+{#                     <ul class="dropdown-menu" role="menu">#}
+{#                         <li><a href="#">SmartCall智能呼</a></li>#}
+{#                         <li><a href="#">运营管理平台ＯＭＳ</a></li>#}
+{#                         <li><a href="#">客户关系管理系统</a></li>#}
+{#                         <li><a href="#">电销系统</a></li>#}
+{#                         <li><a href="#">知识库管理</a></li>#}
+{##}
+{#                         <li><a href="#">排班管理模块</a></li>#}
+{#                         <li><a href="#">考试培训系统</a></li>#}
+{#                         <li><a href="#">多媒体调度指挥系统</a></li>#}
+{#                     </ul>#}
+{#                 </li>#}
+{#                 <li class="dropdown">#}
+{#                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">#}
+{#                         行业方案<span class="caret"></span>#}
+{#                     </a>#}
+{#                     <ul class="dropdown-menu" role="menu">#}
+{#                         <li><a href="#">多媒体呼叫中心</a></li>#}
+{#                         <li><a href="#">保险行业</a></li>#}
+{#                         <li><a href="#">制造行业</a></li>#}
+{#                         <li><a href="#">政府部门</a></li>#}
+{#                         <li><a href="#">教育行业</a></li>#}
+{#                         <li><a href="#">酒店/旅游</a></li>#}
+{#                         <li><a href="#">电子商务</a></li>#}
+{#                         <li><a href="#">社区服务</a></li>#}
+{#                         <li><a href="#">铁路/客运</a></li>#}
+{#                         <li><a href="#">医疗卫生</a></li>#}
+{#                     </ul>#}
+{#                 </li>#}
+{#                 <li><a href="#">公司新闻</a></li>#}
+{#                 <li><a href="#">典型客户</a></li>#}
+{#                 <li><a href="#">合作伙伴</a></li>#}
+{#                 <li><a href="#">联系我们</a></li>#}
+{#             </ul>#}
+{#         </div>#}
+{#     </div>#}
+{# </div>#}
+<nav class="nav navbar-inverse navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            <!--在移动端的时候导航条折叠起来，三横的样式出现，点击该样式可以显示或隐藏导航条上的内容-->
+            <button class="navbar-toggle" data-toggle="collapse" data-target="#menu">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a href="#" class="navbar-brand">logo</a>
         </div>
-
-        <div class="page" id="guowai">
-            <!-- 标题栏 -->
-            <header class="bar bar-nav">
-                <a class="icon icon-me pull-left open-panel"></a>
-                <h1 class="button">添加</h1>
-            </header>
-
-            <!-- 工具栏 -->
-            <nav class="bar bar-tab">
-                <div class="tab-item external">
-                    <a href="#guonei" style="color:darkgray;">
-                        <span class="icon icon-home" ></span>
-                        <span class="tab-label">国内</span>
-                    </a>
-                </div>
-                <a class="tab-item external active">
-                    <span class="icon icon-download"></span>
-                    <span class="tab-label">国外</span>
-                </a>
-            </nav>
-
-            <!-- 这里是页面内容区 -->
-            <div class="content">
-                什么情况
-            </div>
+        <div id="menu" class="collapse navbar-collapse">
+            <ul class="nav navbar-nav">
+                <li class="active"><a href="#">one</a></li>
+                <li><a href="#">two</a></li>
+                <!--下拉菜单功能的实现-->
+                <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                    three<span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">first</a></li>
+                        <li><a href="#">second</a></li>
+                    </ul>
+                </li>
+            </ul>
         </div>
-        <!-- 其他的单个page内联页（如果有） -->
-        <div class="page">...</div>
     </div>
+</nav>
 
-    <!-- 默认必须要执行$.init(),实际业务里一般不会在HTML文档里执行，通常是在业务页面代码的最后执行 -->
-    <script>
-        $.init();
-    </script>
 
-    <script type='text/javascript' src='//g.alicdn.com/sj/lib/zepto/zepto.min.js' charset='utf-8'></script>
-    <script type='text/javascript' src='//g.alicdn.com/msui/sm/0.6.2/js/sm.min.js' charset='utf-8'></script>
-    <script type='text/javascript' src='//g.alicdn.com/msui/sm/0.6.2/js/sm-extend.min.js' charset='utf-8'></script>
-    <script>
-        $("#change_to_guowai").click(function () {
-           alert("成功");
-           {#$("#guonei").hide();#}
-           {#$("#guowai").show();#}
-        });
-        $("#add_url").click(function () {
-           alert("成功");
-        });
-    </script>
-  </body>
+
+
+<div class="container">
+  <div class="card bg-info text-white">
+    <div class="card-body">Info card</div>
+  </div>
+</div>
+
+  <script src="https://cdn.bootcss.com/popper.js/1.12.5/umd/popper.min.js"></script>
+  <script src="https://cdn.bootcss.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+</body>
 </html>

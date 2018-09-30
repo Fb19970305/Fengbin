@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>我的生活</title>
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+    <link rel="shortcut icon" href="/favicon.ico">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+    <link rel="stylesheet" href="//g.alicdn.com/msui/sm/0.6.2/css/sm.min.css">
+    <link rel="stylesheet" href="//g.alicdn.com/msui/sm/0.6.2/css/sm-extend.min.css">
+  </head>
+  <body>
+    <!-- page集合的容器，里面放多个平行的.page，其他.page作为内联页面由路由控制展示 -->
+    <div class="page-group">
+        <!-- 其他的单个page内联页（如果有） -->
+        <div class="page" id='add'>
+          <header class="bar bar-nav">
+            <a class="button button-link button-nav pull-left" href="/index/" external>
+              <span class="icon icon-left"></span>
+              返回
+            </a>
+            <h1 class='title'>添加资源</h1>
+          </header>
+          <div class="content">
+            <div class="list-block">
+                <ul>
+                  <!-- Text inputs -->
+                  <li>
+                    <div class="item-content">
+                      <div class="item-media"><i class="icon icon-form-name"></i></div>
+                      <div class="item-inner">
+                        <div class="item-title label">名称</div>
+                        <div class="item-input">
+                          <input type="text" id="comment" placeholder="填写资源名称">
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="item-content">
+                      <div class="item-media"><i class="icon icon-form-name"></i></div>
+                      <div class="item-inner">
+                        <div class="item-title label">链接</div>
+                        <div class="item-input">
+                          <input type="text" id="url" placeholder="填写资源链接">
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="item-content">
+                      <div class="item-media"><i class="icon icon-form-name"></i></div>
+                      <div class="item-inner">
+                        <div class="item-title label">类型</div>
+                        <div class="item-input">
+                          <input type="text" id="url_type" placeholder="填写资源类型">
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+            </div>
+              <div class="content-block">
+                <p><a id="submit" class="button button-big button-round">确认增加</a></p>
+              </div>
+          </div>
+        </div>
+    </div>
+
+    <script type='text/javascript' src='//g.alicdn.com/sj/lib/zepto/zepto.min.js' charset='utf-8'></script>
+    <script type='text/javascript' src='//g.alicdn.com/msui/sm/0.6.2/js/sm.min.js' charset='utf-8'></script>
+    <script type='text/javascript' src='//g.alicdn.com/msui/sm/0.6.2/js/sm-extend.min.js' charset='utf-8'></script>
+    <script type="text/javascript">
+        $.init();
+        $("#url_type").picker({
+            toolbarTemplate: '<header class="bar bar-nav">\
+              <button class="button button-link pull-right close-picker">确定</button>\
+              <h1 class="title">选择资源类型</h1>\
+              </header>',
+            cols: [
+                {
+                    textAlign: 'center',
+                    values: ['国内', '国外']
+                }
+            ]
+        });
+        $("#submit").click(function () {
+            var comment = $.trim($("#comment").val());
+            var url = $.trim($("#url").val());
+            var url_type = $.trim($("#url_type").val());
+            if(comment.length == 0) {
+                $.alert('名称不能为空');
+                return false;
+            }
+            if(url.length == 0){
+                $.alert('链接不能为空');
+                return false;
+            }
+            if(url_type.length == 0){
+                $.alert('链接类型不能为空');
+                return false;
+            }
+            console.log(url_type);
+            if(url_type=="国内"){
+                url_type = 0;
+            }
+            else if(url_type=="国外"){
+                url_type = 1;
+            }
+            var inputdata = {
+                "comment": comment,
+                "url": url,
+                "is_foreign": url_type,
+            };
+            $.showPreloader();
+             $.ajax({
+                url: '/website/',
+                type: 'POST',
+                async: true,
+                data: inputdata,
+                success: function () {
+                    $.hidePreloader();
+                    $.alert('添加成功');
+                    $.showIndicator();
+                    if(url_type==0)
+                        window.location.replace("/index/#guonei");
+                    else if(url_type==1)
+                        window.location.replace("/index/#guowai");
+                },
+                error: function (json) {
+                    $.hidePreloader();
+                    $.alert(JSON.stringify(json.responseText));
+                }
+            })
+
+        });
+    </script>
+  </body>
+</html>

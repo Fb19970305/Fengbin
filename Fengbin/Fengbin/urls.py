@@ -22,5 +22,6 @@ urlpatterns = [
     url(r'^', include('Fengbin.url_api')),
     url(r'^index/$', index),
     url(r'^login/$', login),
+    url(r'^add/$', add),
 ]
 
