@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'Fengbin',
     'rest_framework',
     'rest_framework.authtoken',
+    'Elsa',
 ]
 
 MIDDLEWARE = [

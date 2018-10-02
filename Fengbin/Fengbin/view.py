@@ -13,3 +13,6 @@ def index(request):
 
 def add(request):
     return render_to_response('add.html')
+
+def youth(request):
+    return render_to_response('youth.html')

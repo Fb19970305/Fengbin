@@ -23,5 +23,7 @@ urlpatterns = [
     url(r'^index/$', index),
     url(r'^login/$', login),
     url(r'^add/$', add),
+    url(r'^youth/$', youth),
+    url(r'^elsa/', include('Elsa.urls_api')),
 ]
 
